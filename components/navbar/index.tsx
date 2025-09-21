@@ -1,53 +1,89 @@
 "use client";
-import { DesktopNavbar } from "./desktop-navbar";
-import { MobileNavbar } from "./mobile-navbar";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "next-view-transitions";
+import { Logo } from "../Logo";
+import { Button } from "../button";
+import { ModeToggle } from "../mode-toggle";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+} from "../ui/resizable-navbar";
 
 const navItems = [
   {
-    title: "Pricing",
+    name: "Pricing",
     link: "/pricing",
   },
   {
-    title: "Blog",
+    name: "Blog",
     link: "/blog",
   },
   {
-    title: "Contact",
+    name: "Contact",
     link: "/contact",
   },
 ];
 
 export function NavBar() {
-  return (
-    <motion.nav
-      initial={{
-        y: -80,
-      }}
-      animate={{
-        y: 0,
-      }}
-      transition={{
-        ease: [0.6, 0.05, 0.1, 0.9],
-        duration: 0.8,
-      }}
-      className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full"
-    >
-      <div className="hidden lg:block w-full">
-        <DesktopNavbar navItems={navItems} />
-      </div>
-      <div className="flex h-full w-full items-center lg:hidden ">
-        <MobileNavbar navItems={navItems} />
-      </div>
-    </motion.nav>
-  );
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-{
-  /* <div className="hidden md:block ">
-        <DesktopNavbar />
-      </div>
-      <div className="flex h-full w-full items-center md:hidden ">
-        <MobileNavbar navItems={navItems} />
-      </div> */
+  return (
+    <Navbar>
+      {/* Desktop Navigation */}
+      <NavBody>
+        <div className="flex items-center">
+          <Logo />
+        </div>
+        <NavItems items={navItems} />
+        <div className="flex space-x-2 items-center">
+          <ModeToggle />
+          <Button variant="simple" as={Link} href="/login">
+            Login
+          </Button>
+          <Button as={Link} href="/signup">
+            Sign Up
+          </Button>
+        </div>
+      </NavBody>
+
+      {/* Mobile Navigation */}
+      <MobileNav>
+        <MobileNavHeader>
+          <Logo />
+          <div className="flex items-center space-x-2">
+            <ModeToggle />
+            <MobileNavToggle
+              isOpen={isOpen}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          </div>
+        </MobileNavHeader>
+        <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          {navItems.map((item, idx) => (
+            <Link
+              key={`mobile-link-${idx}`}
+              href={item.link}
+              onClick={() => setIsOpen(false)}
+              className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-lg"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="flex flex-col gap-2 mt-4">
+            <Button as={Link} href="/signup" onClick={() => setIsOpen(false)}>
+              Sign Up
+            </Button>
+            <Button variant="simple" as={Link} href="/login" onClick={() => setIsOpen(false)}>
+              Login
+            </Button>
+          </div>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
+  );
 }
