@@ -2,7 +2,7 @@
 
 import Balancer from "react-wrap-balancer";
 import { Button } from "./button";
-import { HiArrowRight } from "react-icons/hi2";
+import { FaApple } from "react-icons/fa";
 import { Badge } from "./badge";
 import { motion } from "framer-motion";
 
@@ -86,15 +86,15 @@ export const Hero = () => {
         }}
         className="flex items-center gap-4 justify-center mt-6 relative z-10"
       >
-        <Button>Create Art</Button>
+        <Button>Create on Web</Button>
         <Button
           variant="simple"
           as={Link}
           href="/contact"
           className="flex space-x-2 items-center group"
         >
-          <span>Upload Image</span>
-          <HiArrowRight className="text-muted group-hover:translate-x-1 stroke-[1px] h-3 w-3 transition-transform duration-200 dark:text-muted-dark" />
+          <span>Download App</span>
+          <FaApple className="text-muted group-hover:scale-110 h-3 w-3 transition-transform duration-200 dark:text-muted-dark" />
         </Button>
       </motion.div>
       <div className="p-4 border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-[32px] mt-20 relative">
