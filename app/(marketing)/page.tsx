@@ -7,6 +7,7 @@ import { GridFeatures } from "@/components/grid-features";
 import { Testimonials } from "@/components/testimonials";
 import { CTA } from "@/components/cta";
 import { PetGrid } from "@/components/pet-grid";
+import { PetBentoGrid } from "@/components/pet-bento-grid";
 
 export default function Home() {
   return (
@@ -21,6 +22,12 @@ export default function Home() {
         {/* <GridFeatures /> */}
         {/* <Testimonials /> */}
       </Container>
+      <div className="relative">
+        <div className="absolute inset-0 h-full w-full overflow-hidden">
+          <Background />
+        </div>
+        <PetBentoGrid />
+      </div>
       <div className="relative">
         <div className="absolute inset-0 h-full w-full overflow-hidden">
           <Background />
