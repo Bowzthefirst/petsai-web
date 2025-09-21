@@ -17,7 +17,7 @@ export default function Home() {
         <Hero />
         {/* <Companies /> */}
         <Features />
-        <GridFeatures />
+        {/* <GridFeatures /> */}
         {/* <Testimonials /> */}
       </Container>
       <div className="relative">
