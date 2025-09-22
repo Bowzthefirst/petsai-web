@@ -5,6 +5,7 @@ import { Button } from "./button";
 import { FaApple } from "react-icons/fa";
 import { Badge } from "./badge";
 import { motion } from "framer-motion";
+import ColourfulText from "./ui/colourful-text";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -30,7 +31,7 @@ export const Hero = () => {
         className="flex justify-center"
       >
         <Badge onClick={() => router.push("/blog/top-5-llm-of-all-time")}>
-          We&apos;ve raised $69M seed funding
+          AI-Powered Pet Art Creation
         </Badge>
       </motion.div>
       <motion.h1
@@ -46,9 +47,11 @@ export const Hero = () => {
           ease: "easeOut",
           duration: 0.5,
         }}
-        className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10"
+        className="text-2xl md:text-4xl lg:text-8xl font-fredoka font-bold max-w-6xl mx-auto text-center mt-6 relative z-10"
       >
-        <Balancer>Create Art of Your Pet</Balancer>
+        <Balancer>
+          Create <ColourfulText text="Art" /> of <ColourfulText text="Your Pet" />
+        </Balancer>
       </motion.h1>
       <motion.p
         initial={{
