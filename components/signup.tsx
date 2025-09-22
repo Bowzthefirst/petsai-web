@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandGoogle, IconBrandApple, IconBrandX } from "@tabler/icons-react";
 import Password from "./password";
 import { Button } from "./button";
 import { Logo } from "./Logo";
@@ -65,9 +65,12 @@ export function SignupForm() {
             <div className="flex">
               <Logo />
             </div>
-            <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-black dark:text-white">
-              Sign up for an account
+            <h2 className="mt-8 text-3xl font-fredoka font-bold leading-9 tracking-tight text-black dark:text-white">
+              Create Your Pet AI Account
             </h2>
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Transform your pets into stunning AI masterpieces
+            </p>
           </div>
 
           <div className="mt-10">
@@ -194,11 +197,23 @@ export function SignupForm() {
                 </div>
               </div>
 
-              <div className="mt-6 w-full flex items-center justify-center">
-                <Button onClick={() => {}} className="w-full py-1.5">
-                  <IconBrandGithub className="h-5 w-5" />
+              <div className="mt-6 grid grid-cols-1 gap-3">
+                <Button onClick={() => {}} className="w-full py-2 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 dark:bg-white dark:hover:bg-gray-100">
+                  <IconBrandGoogle className="h-5 w-5 text-red-500" />
                   <span className="text-sm font-semibold leading-6">
-                    Github
+                    Continue with Google
+                  </span>
+                </Button>
+                <Button onClick={() => {}} className="w-full py-2 bg-black hover:bg-gray-800 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100">
+                  <IconBrandApple className="h-5 w-5" />
+                  <span className="text-sm font-semibold leading-6">
+                    Continue with Apple
+                  </span>
+                </Button>
+                <Button onClick={() => {}} className="w-full py-2 bg-black hover:bg-gray-800 text-white dark:bg-gray-900 dark:hover:bg-gray-800">
+                  <IconBrandX className="h-5 w-5" />
+                  <span className="text-sm font-semibold leading-6">
+                    Continue with X
                   </span>
                 </Button>
               </div>

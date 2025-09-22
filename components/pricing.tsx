@@ -42,7 +42,7 @@ export function Pricing() {
             key={tier.id}
             className={cn(
               tier.featured
-                ? "relative bg-[radial-gradient(164.75%_100%_at_50%_0%,#334155_0%,#0F172A_48.73%)]  shadow-2xl"
+                ? "relative bg-gradient-to-br from-pink-500 via-red-500 to-rose-600 shadow-2xl"
                 : " bg-white dark:bg-black",
               "rounded-lg px-6 py-8 sm:mx-8 lg:mx-0  h-full flex flex-col justify-between"
             )}
@@ -54,7 +54,7 @@ export function Pricing() {
                   tier.featured
                     ? "text-white"
                     : "text-muted dark:text-muted-dark",
-                  "text-base font-semibold leading-7"
+                  "text-base font-semibold leading-7 font-fredoka"
                 )}
               >
                 {tier.name}

@@ -30,8 +30,6 @@ export default function PricingPage() {
           </Subheading>
         </div>
         <Pricing />
-        <PricingTable />
-        <Companies />
       </Container>
     </div>
   );
