@@ -425,7 +425,7 @@ export function PetGrid() {
 
   return (
     <div className="relative z-20 py-8 lg:py-16 overflow-hidden">
-      <Heading as="h2">AI Pet Gallery</Heading>
+      <Heading as="h2" className="font-fredoka">AI Pet Gallery</Heading>
       <Subheading className="text-center">
         Explore our collection of AI-generated pet images with various artistic styles and themes.
       </Subheading>

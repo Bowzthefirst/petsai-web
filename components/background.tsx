@@ -45,6 +45,23 @@ const SVGVertical = ({ className }: { className?: string }) => {
   const height = 140;
 
   const id = useId();
+  
+  // Expanded array of vibrant gradient colors
+  const colors = [
+    "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FECA57", "#FF9FF3",
+    "#54A0FF", "#5F27CD", "#00D2D3", "#FF9F43", "#EE5A24", "#0ABDE3",
+    "#C44569", "#F8B500", "#6C5CE7", "#A29BFE", "#FD79A8", "#FDCB6E",
+    "#E17055", "#74B9FF", "#00B894", "#E84393", "#FDCB6E", "#6C5CE7",
+    "#FF7675", "#74B9FF", "#55A3FF", "#26DE81", "#FD79A8", "#FDCB6E",
+    "#46A5CA", "#8C2F2F", "#4FAE4D", "#D6590C", "#811010", "#247AFB",
+    "#A534A0", "#A8A438", "#46A29C", "#670F6D", "#D7C200", "#59BBEB",
+    "#504F1C", "#55BC54", "#4D3568", "#9F39A5", "#363636", "#860909"
+  ];
+  
+  // Use id hash for deterministic color selection to avoid hydration mismatch
+  const colorIndex = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
+  const selectedColor = colors[colorIndex];
+  
   return (
     <motion.svg
       width={width}
@@ -68,13 +85,13 @@ const SVGVertical = ({ className }: { className?: string }) => {
           animate={{ x1: 2, y1: 400, x2: 2, y2: 600 }}
           transition={{
             repeat: Infinity,
-            duration: Math.random() * 2 + 1,
-            delay: Math.floor(Math.random() * 6) + 5,
+            duration: colorIndex * 0.1 + 2,
+            delay: (colorIndex % 6) + 1,
           }}
           gradientUnits="userSpaceOnUse"
         >
           <motion.stop offset="0%" stopColor="transparent" />
-          <motion.stop offset="50%" stopColor="var(--neutral-200)" />
+          <motion.stop offset="50%" stopColor={selectedColor} />
           <motion.stop offset="100%" stopColor="transparent" />
         </motion.linearGradient>
       </defs>
@@ -87,6 +104,23 @@ const SVG = ({ className }: { className?: string }) => {
   const height = 1;
 
   const id = useId();
+  
+  // Expanded array of vibrant gradient colors (same as vertical)
+  const colors = [
+    "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FECA57", "#FF9FF3",
+    "#54A0FF", "#5F27CD", "#00D2D3", "#FF9F43", "#EE5A24", "#0ABDE3",
+    "#C44569", "#F8B500", "#6C5CE7", "#A29BFE", "#FD79A8", "#FDCB6E",
+    "#E17055", "#74B9FF", "#00B894", "#E84393", "#FDCB6E", "#6C5CE7",
+    "#FF7675", "#74B9FF", "#55A3FF", "#26DE81", "#FD79A8", "#FDCB6E",
+    "#46A5CA", "#8C2F2F", "#4FAE4D", "#D6590C", "#811010", "#247AFB",
+    "#A534A0", "#A8A438", "#46A29C", "#670F6D", "#D7C200", "#59BBEB",
+    "#504F1C", "#55BC54", "#4D3568", "#9F39A5", "#363636", "#860909"
+  ];
+  
+  // Use id hash for deterministic color selection to avoid hydration mismatch
+  const colorIndex = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
+  const selectedColor = colors[colorIndex];
+  
   return (
     <motion.svg
       width={width}
@@ -110,13 +144,13 @@ const SVG = ({ className }: { className?: string }) => {
           animate={{ x1: 400, y1: 0, x2: 600, y2: 0 }}
           transition={{
             repeat: Infinity,
-            duration: Math.random() * 2 + 1,
-            delay: Math.floor(Math.random() * 6) + 5,
+            duration: colorIndex * 0.1 + 2,
+            delay: (colorIndex % 6) + 1,
           }}
           gradientUnits="userSpaceOnUse"
         >
           <motion.stop offset="0%" stopColor="transparent" />
-          <motion.stop offset="50%" stopColor="var(--neutral-200)" />
+          <motion.stop offset="50%" stopColor={selectedColor} />
           <motion.stop offset="100%" stopColor="transparent" />
         </motion.linearGradient>
       </defs>

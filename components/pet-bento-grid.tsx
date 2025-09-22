@@ -13,7 +13,7 @@ export function PetBentoGrid() {
   return (
     <div className="relative z-20 py-8 lg:py-16 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <Heading as="h2">Transform your pet photos with AI</Heading>
+        <Heading as="h2" className="font-fredoka">Transform your pet photos with AI</Heading>
         <Subheading className="text-center">
           Create stunning, artistic photos of your beloved pets using our state-of-the-art AI technology. 
           From portraits to fantasy scenes, bring your pet's personality to life.

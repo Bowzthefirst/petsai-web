@@ -3,6 +3,7 @@ import React from "react";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import { Button } from "./button";
+import ColourfulText from "./ui/colourful-text";
 export const CTA = () => {
   return (
     <section className="py-60 w-full  overflow-hidden relative z-30">
@@ -24,8 +25,8 @@ export const CTA = () => {
             ></div>
 
             <div className="relative px-6 pb-14 pt-20 sm:px-10 sm:pb-20 lg:px-[4.5rem]">
-              <h2 className="  text-center text-balance mx-auto text-3xl md:text-5xl font-semibold tracking-[-0.015em] text-white">
-                Ready to create art of your pet?
+              <h2 className="font-fredoka text-center text-balance mx-auto text-3xl md:text-5xl font-semibold tracking-[-0.015em] text-white">
+                Ready to <ColourfulText text="create art" /> of <ColourfulText text="your pet" />?
               </h2>
               <p className="mt-4 max-w-[26rem] text-center mx-auto  text-base/6 text-neutral-200">
                 <Balancer>
