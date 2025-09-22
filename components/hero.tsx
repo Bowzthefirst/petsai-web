@@ -14,7 +14,7 @@ import { Link } from "next-view-transitions";
 export const Hero = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden">
+    <div className="flex flex-col pt-20 md:pt-32 pb-10 md:pb-16 relative overflow-hidden">
       <motion.div
         initial={{
           y: 40,
@@ -31,7 +31,7 @@ export const Hero = () => {
         className="flex justify-center"
       >
         <Badge onClick={() => router.push("/blog/top-5-llm-of-all-time")}>
-          AI-Powered Pet Art Creation
+          Bark. Woof. Meow. Squeak
         </Badge>
       </motion.div>
       <motion.h1

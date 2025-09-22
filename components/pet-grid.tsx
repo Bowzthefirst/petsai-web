@@ -424,7 +424,7 @@ export function PetGrid() {
   };
 
   return (
-    <div className="relative z-20 py-10 lg:py-40 overflow-hidden">
+    <div className="relative z-20 py-8 lg:py-16 overflow-hidden">
       <Heading as="h2">AI Pet Gallery</Heading>
       <Subheading className="text-center">
         Explore our collection of AI-generated pet images with various artistic styles and themes.
@@ -436,7 +436,7 @@ export function PetGrid() {
       </div>
       
       {/* Clean grid layout for 12 images (3 rows of 4) - 3:4 aspect ratio */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4 mt-8">
         {selectedImages.map((image, index) => (
           <div 
             key={index} 
