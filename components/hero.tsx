@@ -6,6 +6,7 @@ import { FaApple } from "react-icons/fa";
 import { Badge } from "./badge";
 import { motion } from "framer-motion";
 import ColourfulText from "./ui/colourful-text";
+import { BackgroundLines } from "./ui/background-lines";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -14,7 +15,7 @@ import { Link } from "next-view-transitions";
 export const Hero = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden">
+    <BackgroundLines className="flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden">
       <motion.div
         initial={{
           y: 40,
@@ -112,6 +113,6 @@ export const Hero = () => {
           />
         </div>
       </div>
-    </div>
+    </BackgroundLines>
   );
 };
